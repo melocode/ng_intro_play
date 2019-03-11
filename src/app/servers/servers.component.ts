@@ -24,7 +24,7 @@ export class ServersComponent implements OnInit {
   //start methods with "on" to indicate that the user is going to act on it
   //via the template.
   onCreateServer() {
-    this.serverCreationStatus = 'The server was created.';
+    this.serverCreationStatus = 'The server was created with the following name: ' + "'" + this.serverName + "'";
   }
 
   onUpdateServerName(event: Event) {
