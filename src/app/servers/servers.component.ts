@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-servers',  //for apps, normally use css selectors
@@ -8,10 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
+  allowNewServer: boolean = false;
+  serverCreationStatus: string = 'No server was created.';
+  serverName: string = '';
 
-  constructor() { }
+  constructor() {
+    setTimeout(() => {
+      this.allowNewServer = true;
+    }, 3000);
+  }
 
   ngOnInit() {
   }
+
+  //start methods with "on" to indicate that the user is going to act on it
+  //via the template.
+  onCreateServer() {
+    this.serverCreationStatus = 'The server was created.';
+  }
+
+  onUpdateServerName(event: Event) {
+    //console.log(event);
+
+    //Need to typecast as HTMLInputElement for the 'value' property.
+    this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
 
 }

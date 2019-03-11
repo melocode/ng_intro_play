@@ -1,4 +1,19 @@
-<h3>...outter servers header...</h3>
+<label>Server Name</label>
+<input
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)">
+<p>{{serverName}}</p>
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()">Add Server
+</button>
+<p>The allow New Server flag is {{allowNewServer}}</p>  <!--String interpolation-->
+<!--<p [innerText]="allowNewServer"></p>-->  <!--Property binding -->
+<p>{{serverCreationStatus}}</p>
+<br>
+<br>
 <app-server></app-server>
 <app-server></app-server>
-<h3>...outter servers footer...</h3>
+
