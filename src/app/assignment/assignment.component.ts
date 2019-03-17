@@ -8,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AssignmentComponent implements OnInit {
 
   public toggle: boolean = true;
-  public i: number = 0;
-  public arrClick: Array<any> = new Array();
+  public arrClick = [];
 
   constructor() { }
 
@@ -17,17 +16,8 @@ export class AssignmentComponent implements OnInit {
   }
 
   doToggle() {
-
     this.toggle = !this.toggle;
-
-    let style = {
-      backgroundColor: this.i > 3 ? 'blue' : ''
-    };
-    let clas = {
-      'white-color': this.i > 3
-    };
-    let tup: [string, any, any] = ['click # ' + ++this.i, style, clas];
-    this.arrClick.push(tup);
+    this.arrClick.push(new Date());
   }
 
 }
