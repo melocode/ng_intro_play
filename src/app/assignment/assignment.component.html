@@ -11,7 +11,7 @@
 <p *ngIf="toggle">This paragraph contains any content that I want.</p>
 <ol class="list-group">
   <li class="list-group-item"
-      *ngFor="let value of arrClick let i = index"
+      *ngFor="let value of arrClick; index as i"
       [ngStyle]="{backgroundColor: i > 3 ? 'blue' : ''}"
       [ngClass]="{'white-color': i > 3}">
     {{value}}
