@@ -1,0 +1,19 @@
+<ul>
+  <li>1. Add a button which says 'Display Details'</li>
+  <li>2. Add a paragraph with any content</li>
+  <li>3. Toggle the displaying of the paragraph with the button</li>
+  <li>4. Log all button clicks in an array and output that array below the paragraph (add a timestamp or incremental number).</li>
+  <li>5. Starting at the 5th log item, give all future log items a blue background (with ngStyle) and white color (ngClass).</li>
+</ul>
+<button
+  class="btn btn-primary"
+  (click)="doToggle()">Display Details</button>
+<p *ngIf="toggle">This paragraph contains any content that I want.</p>
+<ol class="list-group">
+  <li class="list-group-item"
+      *ngFor="let value of arrClick"
+      [ngStyle]="value[1]"
+      [ngClass]="value[2]">
+    {{value[0]}}
+  </li>
+</ol>
