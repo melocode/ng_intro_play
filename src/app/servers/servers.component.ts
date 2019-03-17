@@ -11,6 +11,7 @@ export class ServersComponent implements OnInit {
   allowNewServer: boolean = false;
   serverCreationStatus: string = 'No server was created.';
   serverName: string = 'initial server name';
+  userName: string = '';
 
   constructor() {
     setTimeout(() => {
@@ -25,6 +26,14 @@ export class ServersComponent implements OnInit {
   //via the template.
   onCreateServer() {
     this.serverCreationStatus = 'The server was created with the following name: ' + "'" + this.serverName + "'";
+  }
+
+  onClearUserName() {
+    this.userName = '';  //reset to empty on click
+  }
+
+  isUserNameEmpty() {
+    return (this.userName.length == 0)
   }
 
   onUpdateServerName(event: Event) {
